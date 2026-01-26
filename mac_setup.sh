@@ -260,10 +260,10 @@ create_development_repo
 echo "Wallpapers downloaden..."
 
 case $companyInput in
-    a) wallpaperURL="https://www.grantly.nl/public-img/wall/GRANTLY-macwallpaper.jpg" ;;
-    b) wallpaperURL="https://www.grantly.nl/public-img/wall/HSL-macwallpaper.jpg" ;;
-    c) wallpaperURL="https://www.grantly.nl/public-img/wall/PWRS-macwallpaper.jpg" ;;
-    d) wallpaperURL="https://www.grantly.nl/public-img/wall/GRANTLY-macwallpaper.jpg" ;;
+    a) wallpaperURL="https://www.grntly.com/public-img/wall/GRANTLY-macwallpaper.jpg" ;;
+    b) wallpaperURL="https://www.grntly.com/public-img/wall/HSL-macwallpaper.jpg" ;;
+    c) wallpaperURL="https://www.grntly.com/public-img/wall/PWRS-macwallpaper.jpg" ;;
+    d) wallpaperURL="https://www.grntly.com/public-img/wall/GRANTLY-macwallpaper.jpg" ;;
 esac
 
 wallpaperPath="/Library/Desktop Pictures/company-wallpaper.jpg"
