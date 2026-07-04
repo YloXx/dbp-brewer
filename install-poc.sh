@@ -1,4 +1,10 @@
 #! /bin/bash
+# ===========================================================================
+# DEPRECATED — dit is de oude proof-of-concept installer.
+# Gebruik in plaats hiervan de modulaire, geharde installer: ./install.sh
+# Dit bestand blijft alleen voor referentie/historie en wordt niet onderhouden.
+# ===========================================================================
+echo "[DEPRECATED] Gebruik ./install.sh — deze POC wordt niet meer onderhouden." >&2
 
 echo "grntly-brewer ¯\\\_(ツ)_/¯ Alpha V0.1.1.25 \r\r"
 echo ""
@@ -143,4 +149,5 @@ sudo defaults write /Library/Preferences/com.apple.alf globalstate -int 1
 
 echo -ne 'Closing installer and prepare to work\n'
 sleep 2
-killall terminal
+killall Terminal
+fi

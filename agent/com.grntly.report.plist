@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Grntly Brewer inventory reporter.
+  Install to /Library/LaunchDaemons/com.grntly.report.plist (root:wheel, 644),
+  place report.sh at /usr/local/grntly/report.sh, then:
+    sudo launchctl bootstrap system /Library/LaunchDaemons/com.grntly.report.plist
+  Runs at load and every 4 hours.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.grntly.report</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/usr/local/grntly/report.sh</string>
+    </array>
+    <key>StartInterval</key>
+    <integer>14400</integer>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>StandardOutPath</key>
+    <string>/var/log/grntly-report.log</string>
+    <key>StandardErrorPath</key>
+    <string>/var/log/grntly-report.log</string>
+</dict>
+</plist>
