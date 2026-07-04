@@ -1,8 +1,8 @@
 #!/bin/zsh
 
 #Attribute
-GITHUB_URL=https://github.com/YloXx/grntly-brewer
-RELEASE_VERSION="v1.0"
+GITHUB_URL=https://github.com/grntly/grntly_brewer
+RELEASE_VERSION="v1.1"
 ROOT_PASSWORD=0
 
 # Color Set
@@ -54,10 +54,6 @@ showMenu()
     echo "   ${BRed}Means:${Color_Off} Enables GateKeeper."
     echo "       ${BCyan}>>${Color_Off} Best security.\n"
 
-    echo "${BGreen}Option 3: ${Green}Disable GateKeeper${Color_Off}"
-    echo "   ${BRed}Means:${Color_Off} Completely disables GateKeeper."
-    echo "       ${BCyan}>>${Color_Off} Note that doing this introduces a major security risk in macOS.\n"
-
     echo "${BGreen}Option 4: ${Green}Remove app from GateKeeper quarantine${Color_Off}"
     echo "   ${BRed}Means:${Color_Off} Allows an individual quarantined app to run.\n"
 
@@ -103,19 +99,6 @@ enableGateKeeper()
 	askPassword
 	sudo spctl --master-enable
     echo "${Red}GateKeeper enabled.${Color_Off}"
-    continueMessage
-}
-
-# Disables gatekeeper.
-disableGateKeeper()
-{
-    echo "${Green}You chose to disable GateKeeper.${Color_Off}"
-    echo -e "    ${Red}>> Danger!${Color_Off}"
-	echo -e "       Disabling GateKeeper is a very bad idea and creates"
-	echo -e "       a major security hole in macOS\n"
-	askPassword
-	sudo spctl --master-disable
-    echo "${Red}GateKeeper disabled.${Color_Off}"
     continueMessage
 }
 
@@ -181,12 +164,7 @@ startScript()
                 enableGateKeeper
             ;;
 
-            3)
-                clear
-                disableGateKeeper
-            ;;
-
-            4)  
+            4)
                 clear
                 removeAppFromGateKeeper
             ;;

@@ -1,7 +1,7 @@
-#!/bin/sh
-
-dscl . list /Users | grep -v “^_”
-
+#!/usr/bin/env bash
+# Generieke app-uninstaller. Verplaatst een .app en alle sporen naar de Trash.
+# Gebruik: ./app-uninstall.sh /Applications/SomeApp.app
+# (Gebruikt bash-arrays, daarom bash i.p.v. sh.)
 
 if [ -z "$1" ]; then
   printf "%s\n" "Usage: uninstall /path/to/app.app"

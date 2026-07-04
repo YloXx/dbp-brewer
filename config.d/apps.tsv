@@ -1,0 +1,32 @@
+# Grntly Brewer — app-profielen per medewerkerstype
+# Kolommen (tab-gescheiden): rol  type  naam
+#   rol  = Server | Developer | Overige
+#   type = formula (brew install) | cask (brew install --cask)
+#   naam = de brew formula/cask naam
+#
+# Developer
+Developer	formula	gh
+Developer	formula	wget
+Developer	formula	git
+Developer	cask	orbstack
+Developer	cask	google-chrome
+Developer	cask	google-drive
+Developer	cask	visual-studio-code
+Developer	cask	postman
+Developer	cask	slack
+Developer	cask	spotify
+#
+# Server
+Server	formula	nginx
+Server	formula	redis
+Server	formula	postgresql@16
+Server	cask	orbstack
+Server	cask	google-chrome
+Server	cask	google-drive
+Server	cask	iterm2
+#
+# Overige medewerker
+Overige	cask	google-chrome
+Overige	cask	google-drive
+Overige	cask	slack
+Overige	cask	spotify

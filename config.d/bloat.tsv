@@ -1,0 +1,8 @@
+# Grntly Brewer — debloat lijst
+# Ongebruikte apps die van zakelijke Macs verwijderd mogen worden.
+# Kolommen (tab-gescheiden): app_path  reden
+/Applications/GarageBand.app	Niet nodig voor zakelijk gebruik; grote schijfruimte
+/Applications/iMovie.app	Niet nodig voor zakelijk gebruik
+/Applications/Keynote.app	Google Workspace wordt gebruikt i.p.v. iWork
+/Applications/Numbers.app	Google Workspace wordt gebruikt i.p.v. iWork
+/Applications/Pages.app	Google Workspace wordt gebruikt i.p.v. iWork

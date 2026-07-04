@@ -1,0 +1,7 @@
+# Grntly Brewer — bedrijfsconfiguratie
+# Kolommen (tab-gescheiden): key  prefix  naam  wallpaper_url
+# 'key' is de letter die in de installer wordt gekozen.
+a	GRANTLY	Grantly	https://www.grntly.com/public-img/wall/GRANTLY-macwallpaper.jpg
+b	HSL	Het Subsidie Lab	https://www.grntly.com/public-img/wall/HSL-macwallpaper.jpg
+c	PWRS	PWRSTAFF	https://www.grntly.com/public-img/wall/PWRS-macwallpaper.jpg
+d	MTBR	Meetbaar	https://www.grntly.com/public-img/wall/GRANTLY-macwallpaper.jpg

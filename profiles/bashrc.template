@@ -1,0 +1,45 @@
+# ===========================================================================
+# Grntly Brewer — managed .bashrc  (deployed by modules/70-profiles.sh)
+# Bewerk dit centraal in de repo, niet per machine.
+# ===========================================================================
+
+# Homebrew shell environment (Apple Silicon path)
+if [[ -x /opt/homebrew/bin/brew ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# --- History hardening ------------------------------------------------------
+export HISTSIZE=10000
+export HISTFILESIZE=20000
+export HISTCONTROL=ignoreboth:erasedups   # geen dubbele/space-prefixed regels
+shopt -s histappend                        # append i.p.v. overschrijven
+shopt -s checkwinsize
+# Voorkom dat gevoelige commando's in history landen
+export HISTIGNORE='ls:cd:pwd:clear:history:* --password *:* --token *'
+
+# --- Sane defaults ----------------------------------------------------------
+export EDITOR="${EDITOR:-nano}"
+export LANG="${LANG:-en_US.UTF-8}"
+export CLICOLOR=1
+export LESS="-R"
+
+# --- Prompt: user@host cwd (git branch) ------------------------------------
+_git_branch() { git branch --show-current 2>/dev/null | sed 's/.*/ (&)/'; }
+PS1='\[\033[1;36m\]\u@\h\[\033[0m\]:\[\033[1;34m\]\w\[\033[0;33m\]$(_git_branch)\[\033[0m\]\$ '
+
+# --- Aliases ----------------------------------------------------------------
+alias ll='ls -lahG'
+alias la='ls -AG'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias grep='grep --color=auto'
+alias brewup='brew update && brew upgrade && brew cleanup'
+alias ip='ipconfig getifaddr en0'
+alias serial="ioreg -l | awk -F'\"' '/IOPlatformSerialNumber/{print \$4}'"
+
+# --- Development directory (created by profiles module) ---------------------
+export DEV_DIR="$HOME/Development"
+alias dev='cd "$DEV_DIR"'
+
+# Load machine-local overrides if present (never committed)
+[[ -f "$HOME/.bashrc.local" ]] && source "$HOME/.bashrc.local"
